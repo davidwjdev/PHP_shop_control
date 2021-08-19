@@ -19,4 +19,20 @@ if(isset($_POST["btn-cadastrar-cliente"])):
         header('Location: ./pages/clientes/lista.php?erro');
     endif;
 endif;
+
+if(isset($_POST["btn-cadastrar-produto"])):
+    $nome = mysqli_escape_string($conn, $_POST["nome"]);
+    $valor_unitario = mysqli_escape_string($conn, $_POST["valor_unitario"]);
+    $quantidade = mysqli_escape_string($conn, $_POST["quantidade"]);
+
+    $sql = "INSERT INTO produtos (nome, valor_unitario, quantidade) VALUES ('$nome','$valor_unitario','$quantidade')";
+
+    if(mysqli_query($conn,$sql)):
+        $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+        header('Location: ../pages/produtos/lista.php?sucesso');
+    else:
+        $_SESSION['mensagem'] = "Erro ao cadastrar!";
+        header('Location: ./pages/produtos/lista.php?erro');
+    endif;
+endif;
 ?>
