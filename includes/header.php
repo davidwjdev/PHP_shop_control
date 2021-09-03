@@ -26,7 +26,7 @@
           <li><a href="/PHP/Projeto_PHP/index.php" class="nav-link px-2 text-white">Home</a></li>
           <li><a href="/PHP/Projeto_PHP/pages/clientes/lista.php" class="nav-link px-2 text-white">Clientes</a></li>
           <li><a href="/PHP/Projeto_PHP/pages/produtos/lista.php" class="nav-link px-2 text-white">Produtos</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Pedidos</a></li>
+          <li><a href="/PHP/Projeto_PHP/pages/pedidos/lista.php" class="nav-link px-2 text-white">Pedidos</a></li>
           </ul>
         </div>
       </div>
