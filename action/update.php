@@ -37,4 +37,19 @@ if(isset($_POST["btn-editar-produto"])):
         header('Location: ./pages/produtos/lista.php?erro');
     endif;
 endif;
+
+if(isset($_POST["btn-editar-pedido"])):
+    $id_pedido = mysqli_escape_string($conn, $_POST["id_pedido"]);
+    $status = mysqli_escape_string($conn, $_POST["status"]);
+
+    $sql = "UPDATE pedidos SET status ='$status' WHERE  id_pedido = '$id_pedido'";
+
+    if(mysqli_query($conn,$sql)):
+        $_SESSION['mensagem'] = "Salvo com sucesso!";
+        header('Location: ../pages/pedidos/lista.php?sucesso');
+    else:
+        $_SESSION['mensagem'] = "Erro ao Salvar!";
+        header('Location: ./pages/pedidos/lista.php?erro');
+    endif;
+endif;
 ?>

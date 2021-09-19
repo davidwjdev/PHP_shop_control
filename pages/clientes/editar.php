@@ -12,7 +12,7 @@ if(isset($_GET['id_cliente'])):
 endif;
 ?>
 
-<div class="px-4 py-5 my-5 text-center">
+<div class="px-4 py-1 my-5 text-center">
     <h1 class="display-5 fw-bold">Editar Cliente</h1>
 </div>
 

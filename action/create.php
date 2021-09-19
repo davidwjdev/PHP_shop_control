@@ -35,4 +35,20 @@ if(isset($_POST["btn-cadastrar-produto"])):
         header('Location: ./pages/produtos/lista.php?erro');
     endif;
 endif;
+
+if(isset($_POST["btn-cadastrar-pedido"])):
+    $data = mysqli_escape_string($conn, $_POST["data"]);
+    $codigo_barras = mysqli_escape_string($conn, $_POST["codigo_barras"]);
+    $id_cliente = mysqli_escape_string($conn, $_POST["id_cliente"]);
+
+    $sql = "INSERT INTO pedidos (status, data, codigo_barras, id_cliente) VALUES ('Em Aberto', '$data','$codigo_barras','$id_cliente')";
+
+    if(mysqli_query($conn,$sql)):
+        $_SESSION['mensagem'] = "Cadastrado com sucesso!";
+        header('Location: ../pages/pedidos/lista.php?sucesso');
+    else:
+        $_SESSION['mensagem'] = "Erro ao cadastrar!";
+        header('Location: ./pages/pedidos/lista.php?erro');
+    endif;
+endif;
 ?>

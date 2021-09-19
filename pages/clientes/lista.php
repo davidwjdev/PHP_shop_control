@@ -17,7 +17,7 @@ include_once('../../includes/mensagem.php');
             Adicionar Cliente
         </a>
         <form>
-            <input class="form-controls" type="text" name="search_text" id="search_text" placeholder="Search" aria-label="Search">
+            <input class="form-control" type="text" name="search_text" id="search_text" placeholder="Search" aria-label="Search">
         </form>
     </div>
     <table class="table table-hover">
